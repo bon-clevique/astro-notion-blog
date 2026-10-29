@@ -17,8 +17,12 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.4
+
       - name: Install packages
-        run: npm install
+        run: npm ci
 
       - name: Run lint
         run: npm run lint
